@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Smartphone, Apple, Play, Laptop, Sparkles, Star, Download, QrCode, Search, Flame, ArrowUpRight } from 'lucide-react';
+import { Smartphone, Apple, Play, Laptop, Sparkles, Star, Download, QrCode, Search, Flame, ArrowUpRight, ArrowRight, Users, Check } from 'lucide-react';
 
 const SPOTLIGHT_APPS = [
   {
@@ -46,16 +46,25 @@ const SPOTLIGHT_APPS = [
 export function HeroSection() {
   const [activeAppIndex, setActiveAppIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
+  const [installed, setInstalled] = useState(false);
   const currentApp = SPOTLIGHT_APPS[activeAppIndex];
+
+  const handleSimulateInstall = () => {
+    setInstalled(true);
+    setTimeout(() => setInstalled(false), 2500);
+  };
 
   return (
     <section className="applaunch-hero">
+      <div className="applaunch-ambient-glow" />
+
       <div className="applaunch-hero-grid">
         {/* Left: Value proposition & Search */}
         <div className="applaunch-hero-content">
           <div className="applaunch-badge">
             <Flame size={14} className="text-orange-500 animate-pulse" />
             <span>Discover Today's #1 Trending Mobile Launches</span>
+            <span className="applaunch-badge-pill">DAILY</span>
           </div>
 
           <h1 className="applaunch-title">
@@ -88,6 +97,35 @@ export function HeroSection() {
               Explore Apps
             </button>
           </form>
+
+          {/* Dual Action Buttons */}
+          <div className="applaunch-cta-row">
+            <Link href="/category/apps" className="applaunch-primary-btn">
+              Browse 4,200+ Apps <ArrowRight size={15} />
+            </Link>
+            <Link href="/submit" className="applaunch-secondary-btn">
+              Submit Your App
+            </Link>
+          </div>
+
+          {/* Social Proof Stack */}
+          <div className="applaunch-social-proof">
+            <div className="applaunch-avatar-stack">
+              <span className="app-avatar av-1">📱</span>
+              <span className="app-avatar av-2">🚀</span>
+              <span className="app-avatar av-3">⭐️</span>
+              <span className="app-avatar av-4">🔥</span>
+            </div>
+            <div className="applaunch-proof-text">
+              <div className="applaunch-proof-stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                ))}
+                <span className="applaunch-rating">4.9/5.0</span>
+              </div>
+              <span className="applaunch-subtext">Loved by 85,000+ mobile builders & beta testers</span>
+            </div>
+          </div>
 
           {/* Platform Pills */}
           <div className="applaunch-platforms-row">
@@ -140,7 +178,10 @@ export function HeroSection() {
                 {SPOTLIGHT_APPS.map((app, idx) => (
                   <button
                     key={app.id}
-                    onClick={() => setActiveAppIndex(idx)}
+                    onClick={() => {
+                      setActiveAppIndex(idx);
+                      setInstalled(false);
+                    }}
                     className={`app-dot-btn ${activeAppIndex === idx ? 'active' : ''}`}
                     title={app.name}
                     type="button"
@@ -180,12 +221,27 @@ export function HeroSection() {
 
             {/* CTA action row */}
             <div className="phone-actions-row">
-              <Link href="/submit" className="phone-btn-primary">
-                Launch Your App <ArrowUpRight size={14} />
-              </Link>
+              <button 
+                onClick={handleSimulateInstall} 
+                className={`phone-btn-primary ${installed ? 'installed' : ''}`}
+                type="button"
+              >
+                {installed ? (
+                  <>
+                    <Check size={14} /> Installed to Device
+                  </>
+                ) : (
+                  <>
+                    Get Beta Access <ArrowUpRight size={14} />
+                  </>
+                )}
+              </button>
               <button 
                 className="phone-btn-secondary" 
-                onClick={() => setActiveAppIndex((prev) => (prev + 1) % SPOTLIGHT_APPS.length)}
+                onClick={() => {
+                  setActiveAppIndex((prev) => (prev + 1) % SPOTLIGHT_APPS.length);
+                  setInstalled(false);
+                }}
                 type="button"
               >
                 Next App
