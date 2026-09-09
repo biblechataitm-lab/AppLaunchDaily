@@ -4,29 +4,133 @@ import { request, mockMode } from './client';
 const MOCK_PRODUCTS: Product[] = [
   {
     "id": "ald-1",
-    "title": "HabitZen Native",
-    "tagline": "Minimalist habit tracker with widgets, haptic feedback, and local iCloud sync",
-    "description": "Zero analytics, zero tracking, beautiful gesture-driven daily habit building for iOS and watchOS.",
-    "logo": "https://placehold.co/96x96/1c1917/f97316?text=HZ",
-    "link": "https://example.com/habitzen",
-    "category": "iOS Apps",
+    "title": "Happy Voice",
+    "tagline": "Turn restaurant phone orders into Clover POS tickets automatically with AI voice agents",
+    "link": "https://happyvoice.io",
+    "category": "AI & ML",
+    "upvotes": 480,
     "tags": [
-      "ios",
-      "mobile",
-      "swift"
+      "ai",
+      "voice",
+      "pos"
+    ],
+    "techStack": [
+      "Next.js",
+      "React",
+      "Twilio"
+    ],
+    "maker": {
+      "name": "Gautam B.",
+      "avatar": "https://placehold.co/64x64/ff5722/ffffff?text=GB"
+    }
+  },
+  {
+    "id": "ald-2",
+    "title": "ShipFast",
+    "tagline": "Next.js boilerplate with Stripe, Supabase auth, and emails pre-built to launch your startup in days",
+    "link": "https://shipfa.st",
+    "category": "Developer Tools",
+    "upvotes": 450,
+    "tags": [
+      "boilerplate",
+      "nextjs",
+      "saas"
+    ],
+    "techStack": [
+      "Next.js",
+      "Stripe",
+      "Supabase"
+    ],
+    "maker": {
+      "name": "Marc Lou",
+      "avatar": "https://placehold.co/64x64/ffb300/ffffff?text=ML"
+    }
+  },
+  {
+    "id": "ald-3",
+    "title": "ChatNode",
+    "tagline": "Train conversational AI bots on your websites, Notion pages, and PDFs for instant customer support",
+    "link": "https://chatnode.ai",
+    "category": "Automation",
+    "upvotes": 390,
+    "tags": [
+      "chatbots",
+      "customer-support",
+      "ai"
+    ],
+    "techStack": [
+      "OpenAI",
+      "Next.js",
+      "Vector DB"
+    ],
+    "maker": {
+      "name": "Alex M.",
+      "avatar": "https://placehold.co/64x64/3b82f6/ffffff?text=CN"
+    }
+  },
+  {
+    "id": "ald-4",
+    "title": "Typefully",
+    "tagline": "Distraction-free publishing platform and analytics to write, schedule, and grow your audience",
+    "link": "https://typefully.com",
+    "category": "Productivity",
+    "upvotes": 360,
+    "tags": [
+      "social",
+      "content",
+      "growth"
+    ],
+    "techStack": [
+      "React",
+      "Node.js"
+    ],
+    "maker": {
+      "name": "Fabrizio Rinaldi",
+      "avatar": "https://placehold.co/64x64/10b981/ffffff?text=TF"
+    }
+  },
+  {
+    "id": "ald-5",
+    "title": "Dub.co",
+    "tagline": "Open-source link management infrastructure for modern marketing teams with enterprise analytics",
+    "link": "https://dub.co",
+    "category": "Search & Data",
+    "upvotes": 340,
+    "tags": [
+      "shortlink",
+      "analytics",
+      "marketing"
+    ],
+    "techStack": [
+      "Next.js",
+      "Upstash",
+      "Tinybird"
+    ],
+    "maker": {
+      "name": "Steven Tey",
+      "avatar": "https://placehold.co/64x64/8b5cf6/ffffff?text=DB"
+    }
+  },
+  {
+    "id": "ald-6",
+    "title": "Screen Studio",
+    "tagline": "Professional screen recorder for macOS that automatically creates silky smooth camera zooms",
+    "link": "https://screen.studio",
+    "category": "Design & Media",
+    "upvotes": 320,
+    "tags": [
+      "video",
+      "macos",
+      "demo"
     ],
     "techStack": [
       "Swift",
-      "SwiftUI",
-      "CoreData"
+      "Metal",
+      "VideoKit"
     ],
-    "coverImages": [],
-    "upvotes": 462,
-    "launchedAt": "2026-08-19T05:12:33.188Z",
     "maker": {
-      "name": "Milo Parker",
-      "username": "mparker",
-      "avatar": "https://placehold.co/64x64/292524/f97316?text=M"
+      "name": "Adam Lovrencic",
+      "avatar": "https://placehold.co/64x64/ec4899/ffffff?text=SS"
     }
   }
 ];
