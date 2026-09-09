@@ -1,52 +1,55 @@
 import React from 'react';
 import Link from 'next/link';
+import { ExternalLink, MessageCircle, Mail } from 'lucide-react';
 
 export function Footer({ siteName = 'AppLaunchDaily' }: { siteName?: string }) {
   return (
-    <footer className="footer-wrapper">
-      <div className="container">
-        <div className="footer-grid">
-          <div>
-            <div className="header-brand" style={{ marginBottom: '12px' }}>
-              <span>{siteName}</span>
-              <span className="header-brand-dot" />
+    <footer className="ald-footer">
+      <div className="ald-footer-content">
+        <div className="ald-footer-top">
+          <div className="ald-footer-brand-area">
+            <div className="ald-footer-brand"><span>{siteName}</span></div>
+            <p className="ald-footer-tagline">Daily curated app launches. Discover iOS, Android, and web apps from indie makers and studios worldwide.</p>
+            <div className="ald-footer-socials">
+              <a href="#" aria-label="Website"><ExternalLink size={16} /></a>
+              <a href="#" aria-label="Community"><MessageCircle size={16} /></a>
+              <a href="#" aria-label="Email"><Mail size={16} /></a>
             </div>
-            <p style={{ fontSize: '13.5px', color: 'var(--text-body)', maxWidth: '320px', lineHeight: 1.6 }}>
-              The daily launchpad for indie mobile apps, web utilities, and micro-SaaS.
-            </p>
           </div>
-
-          <div>
-            <h4 className="footer-heading">Discover</h4>
-            <ul className="footer-links">
-              <li><Link href="/">Today's Launches</Link></li>
-              <li><Link href="/trends">Trending Tools</Link></li>
-              <li><Link href="/collections/this-week">Weekly Curations</Link></li>
-              <li><Link href="/collections/this-month">Monthly Roundups</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Publishing</h4>
-            <ul className="footer-links">
-              <li><Link href="/submit">Submit Product</Link></li>
-              <li><Link href="/sponsor">Sponsor Directory</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Legal</h4>
-            <ul className="footer-links">
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Service</Link></li>
-            </ul>
+          <div className="ald-footer-links-grid">
+            <div>
+              <h4 className="ald-footer-heading">Explore</h4>
+              <ul>
+                <li><Link href="/">Today's Launches</Link></li>
+                <li><Link href="/trends">Trending</Link></li>
+                <li><Link href="/collections/this-week">Weekly Top</Link></li>
+                <li><Link href="/collections/this-month">Monthly Top</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="ald-footer-heading">Categories</h4>
+              <ul>
+                <li><Link href="/category/ios-apps">iOS Apps</Link></li>
+                <li><Link href="/category/android-apps">Android Apps</Link></li>
+                <li><Link href="/category/web-apps">Web Apps</Link></li>
+                <li><Link href="/category/desktop">Desktop</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="ald-footer-heading">Directory</h4>
+              <ul>
+                <li><Link href="/submit">Submit Product</Link></li>
+                <li><Link href="/sponsor">Sponsor</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/privacy">Privacy</Link></li>
+                <li><Link href="/terms">Terms</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div className="footer-bottom">
-          <div>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</div>
-          <div>Powered by Publisher Ad Network</div>
+        <div className="ald-footer-bottom">
+          <span>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</span>
+          <span>Powered by the Publisher Ad Network</span>
         </div>
       </div>
     </footer>
