@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { Smartphone, Apple, Play, Laptop, Sparkles, Star, Download, Flame, ArrowRight, ShieldCheck, CheckCircle2, Rocket } from 'lucide-react';
 
 export function LandingSections() {
@@ -150,12 +149,12 @@ export function LandingSections() {
             Fill your TestFlight seats, collect actionable crash reports, and build initial launch momentum today.
           </p>
           <div className="launch-cta-buttons">
-            <Link href="/submit" className="launch-cta-primary">
+            <a href="/submit" className="launch-cta-primary">
               Launch App Now <ArrowRight size={15} />
-            </Link>
-            <Link href="/category/apps" className="launch-cta-secondary">
+            </a>
+            <a href="/category/apps" className="launch-cta-secondary">
               Browse Top Charts
-            </Link>
+            </a>
           </div>
         </div>
       </section>
