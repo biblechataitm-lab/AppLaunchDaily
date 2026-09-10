@@ -3,10 +3,10 @@
 import React from 'react';
 
 const STATS = [
-  { value: '1,800+', label: 'Apps Listed' },
-  { value: '80+', label: 'Daily Launches' },
-  { value: '28K+', label: 'App Enthusiasts' },
-  { value: '93%', label: 'Maker Satisfaction' },
+  { value: '100%', label: 'Direct Maker Submissions' },
+  { value: 'Realtime', label: 'Verified Catalog Releases' },
+  { value: 'Community', label: 'Upvote & Feedback Engine' },
+  { value: 'Zero Tracking', label: 'Privacy First Directory' },
 ];
 
 export function StatsSection() {
